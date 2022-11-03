@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -eu
+
+if ! which brew >/dev/null
+then
+  CI=true /bin/bash -c \
+  "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+  echo "Homebrew already installed."
+fi
