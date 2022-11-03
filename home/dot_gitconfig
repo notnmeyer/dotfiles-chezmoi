@@ -1,0 +1,43 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Nate Meyer
+	email = 672246+notnmeyer@users.noreply.github.com
+	username = notnmeyer
+	signingkey = 6EC60666D268DE40
+
+[init]
+	defaultBranch = main
+
+[instaweb]
+	httpd = lighttpd
+
+[color]
+	ui = auto
+
+[alias]
+	co = checkout
+	cob = checkout -b
+	prunelocal = !sh -c 'git branch -d `git branch --merged | grep -v "^*" | tr -d "\\n"`'
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[credential "https://github.com"]
+	helper = !`which gh` auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = !`which gh` auth git-credential
+
+[commit]
+	gpgsign = false
+
+[push]
+	autoSetupRemote = true
+
+[gpg]
+	program = gpg
+
+[tig "color"] cursor = black blue bold
