@@ -1,3 +1,4 @@
+{{- if .homebrew -}}
 #!/usr/bin/env bash
 set -eu
 
@@ -14,3 +15,4 @@ brew bundle --file ~/Brewfile_optix
 {{ else }}
 brew bundle
 {{ end }}
+{{- end -}}
