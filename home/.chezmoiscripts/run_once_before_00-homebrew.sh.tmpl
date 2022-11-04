@@ -8,3 +8,9 @@ then
 else
   echo "Homebrew already installed."
 fi
+
+{{ if and .work .homebrew }}
+brew bundle --file ~/Brewfile_optix
+{{ else }}
+brew bundle
+{{ end }}

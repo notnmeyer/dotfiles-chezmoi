@@ -2,6 +2,8 @@ set -x GPG_TTY (tty)
 set -x EDITOR vim
 
 set -g fish_user_paths \
+    "{{ .homebrewPrefix }}/bin" \
+    "{{ .homebrewPrefix }}/sbin" \
     "/usr/local/bin" \
     "/usr/bin" \
     "/bin" \
@@ -14,23 +16,9 @@ set -g fish_user_paths \
     "$HOME/go/bin" \
     "$fish_user_paths"
 
-{{ if eq .chezmoi.os "darwin" -}}
-set -g fish_user_paths \
-    "/opt/homebrew/bin" \
-    "/opt/homebrew/sbin" \
-    "$fish_user_paths"
-{{- end -}}
-
-{{ if eq .chezmoi.os "linux" -}}
-set -g fish_user_paths \
-    "/home/linuxbrew/.linuxbrew/bin/" \
-    "/home/linuxbrew/.linuxbrew/sbin/" \
-    "$fish_user_paths"
-{{- end }}
-
+eval ({{ .homebrewPrefix }}/bin/brew shellenv)
 test -e ~/.asdf/asdf.fish && source ~/.asdf/asdf.fish
 
 {{- if eq .chezmoi.os "linux" }}
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 alias aws-vault "aws-vault --backend=pass"
 {{- end -}}

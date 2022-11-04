@@ -2,7 +2,7 @@
 set -eu
 
 # install fisher
-fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
+{{- .homebrewPrefix }}/bin/fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
 
 # install fish plugins
 while read -r plugin

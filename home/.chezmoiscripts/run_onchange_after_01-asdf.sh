@@ -6,11 +6,11 @@ then
     git clone https://github.com/asdf-vm/asdf.git ~/.asdf
     mkdir -p ~/.config/fish/completions
     ln -sfs ~/.asdf/completions/asdf.fish ~/.config/fish/completions
-    # install plugins
     # shellcheck source=/dev/null
     source "$HOME/.asdf/asdf.sh"
     asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
     asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+    asdf plugin add golang https://github.com/kennyp/asdf-golang.git
     # install global versions
     if [[ -d /home/linuxbrew/.linuxbrew/opt/openssl@1.1 ]]
     then
