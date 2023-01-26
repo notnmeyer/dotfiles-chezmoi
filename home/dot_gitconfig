@@ -17,7 +17,7 @@
 [alias]
 	co = checkout
 	cob = checkout -b
-	prunelocal = !sh -c 'git branch -d `git branch --merged | grep -v "^*" | tr -d "\\n"`'
+	prunelocal = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
