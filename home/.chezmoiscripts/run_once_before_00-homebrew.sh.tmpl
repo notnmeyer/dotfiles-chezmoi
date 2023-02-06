@@ -10,9 +10,5 @@ else
   echo "Homebrew already installed."
 fi
 
-{{ if and .work .homebrew }}
-brew bundle --file ~/Brewfile_optic
-{{ else }}
 brew bundle
-{{ end }}
 {{- end -}}
