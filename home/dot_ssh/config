@@ -1,7 +1,6 @@
 Include /Users/nate/.colima/ssh_config
 
 Host *
-  ForwardAgent yes
   IgnoreUnknown UseKeychain
   UseKeychain yes
   IdentityFile ~/.ssh/id_ed25519
