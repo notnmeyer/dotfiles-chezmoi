@@ -4,3 +4,14 @@ Host *
   IgnoreUnknown UseKeychain
   UseKeychain yes
   IdentityFile ~/.ssh/id_ed25519
+  ForwardAgent no
+  ForwardX11 no
+  PermitLocalCommand no
+  PubkeyAuthentication no
+  IdentitiesOnly yes
+  AddKeysToAgent no
+
+Host shhhbb.com
+  PubkeyAuthentication yes
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id@shhhbb.com
