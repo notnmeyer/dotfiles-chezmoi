@@ -20,3 +20,7 @@ right = ["workspace-diagnostics", "diagnostics", "selections", "position", "file
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
+
+[editor.soft-wrap]
+enable = true
+
