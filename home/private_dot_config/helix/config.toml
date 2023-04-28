@@ -7,7 +7,6 @@ select = "block"
 
 [editor.file-picker]
 hidden = false
-git-ignore = true
 
 [editor.lsp]
 display-messages = true
