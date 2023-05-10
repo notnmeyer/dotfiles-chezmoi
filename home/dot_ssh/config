@@ -7,7 +7,7 @@ Host *
   ForwardAgent no
   ForwardX11 no
   PermitLocalCommand no
-  PubkeyAuthentication no
+  PubkeyAuthentication yes
   IdentitiesOnly yes
   AddKeysToAgent no
 
