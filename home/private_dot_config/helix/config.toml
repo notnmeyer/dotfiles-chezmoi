@@ -1,5 +1,9 @@
 theme = "jellybeans"
 
+[editor]
+autoformat = true
+autosave = true
+
 [editor.cursor-shape]
 normal = "block"
 insert = "bar"
