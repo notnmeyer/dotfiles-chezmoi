@@ -1,8 +1,8 @@
 theme = "jellybeans"
 
 [editor]
-autoformat = true
-autosave = true
+auto-format = true
+auto-save = true
 
 [editor.cursor-shape]
 normal = "block"
