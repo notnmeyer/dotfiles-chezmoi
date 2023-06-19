@@ -20,6 +20,12 @@ set -g fish_user_paths \
 eval ({{ .homebrewPrefix }}/bin/brew shellenv)
 test -e ~/.asdf/asdf.fish && source ~/.asdf/asdf.fish
 
+# test if etd/bass is installed
+if test -q bass
+    # somewhat hacky nix support: https://github.com/NixOS/nix/issues/1512#issuecomment-1231855853
+    bass source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+end
+
 {{- if eq .chezmoi.os "linux" }}
 alias aws-vault "aws-vault --backend=pass"
 
