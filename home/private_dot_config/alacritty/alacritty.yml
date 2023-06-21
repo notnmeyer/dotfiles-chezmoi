@@ -6,6 +6,9 @@ env:
 window:
   dynamic_padding: true
   option_as_alt: Both
+  padding:
+    x: 10
+    y: 0
 
 font:
   normal:
