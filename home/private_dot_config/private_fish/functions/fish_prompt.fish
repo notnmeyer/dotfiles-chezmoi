@@ -57,7 +57,7 @@ function fish_prompt
   # of AWS_VAULT to determine if we are credentialed.
   # if we are, include the credentialed profile in the
   # prompt.
-  if which aws-vault >/dev/null
+  if which aws-vault &>/dev/null
     if test -n "$AWS_VAULT"
       set -l profile $red(echo $AWS_VAULT)
       set -l left $blue(echo "aws:")
@@ -66,7 +66,7 @@ function fish_prompt
     end
   end
 
-  if which kubectl >/dev/null
+  if which kubectl &>/dev/null
     if kubectl config current-context &>/dev/null
       set -l context $red(kubectl config current-context)
       set -l left $blue(echo "k8s:")
