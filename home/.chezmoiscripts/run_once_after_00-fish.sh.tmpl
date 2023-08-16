@@ -1,15 +1,10 @@
 #!/usr/bin/env bash
 set -eu
 
-{{ $fish := print .homebrewPrefix "/bin/fish" }}
-
-{{ if (and .ephemeral (not .homebrew)) }}
-{{/* todo: see what .osid looks like and install fish manually */}}
-{{   $fish = "/usr/local/bin/fish" }}
-{{ end }}
+# fish is assumed to already be installed and in $PATH
 
 # install fisher
-{{ $fish }} -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
+$(which fish) -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
 
 # install fish plugins
 while read -r plugin
